@@ -1,7 +1,12 @@
-<% @songs.each do |song| %>
- <ul>
-   <li><%= song.title %></li>
-   <li><%= song.length %></li>
-   <li><%= song.play_count %></li>
- </ul>
-<% end %>
+<h1> All Songs</h1>
+
+<div id="songs">
+  <% @songs.each do |song| %>
+   <h3><%= song.title %></h3>
+   <p>Song length: <%=song.length%></p>
+   <% if song.playlist %>
+     <li>Playlist: <%= song.playlist.name %> </li>
+   <% end %>
+   <p>Play Count: <%=song.play_count%></p>
+  <% end %>
+</div>
